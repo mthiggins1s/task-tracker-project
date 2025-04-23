@@ -1,12 +1,15 @@
 <div class="task-container">
   <div class="input-section">
+    <!-- updates the task everyime the user types -->
     <input [(ngModel)]="taskText" placeholder="Enter task here" />
+    <!-- listens for button click, once clicked, updates the task array -->
     <button (click)="onButtonClick()">Submit Task</button>
   </div>
 
   <ul class="task-list">
+    <!-- loops through the task array, and when the task is submitted, it creates a list element -->
     @for (task of tasks; track task) {
-      <li>{{ task }}</li>
+    <li>{{ task }}</li>
     }
   </ul>
 </div>
