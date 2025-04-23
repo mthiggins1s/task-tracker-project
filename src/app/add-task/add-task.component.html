@@ -1,0 +1,12 @@
+<div class="task-container">
+  <div class="input-section">
+    <input [(ngModel)]="taskText" placeholder="Enter task here" />
+    <button (click)="onButtonClick()">Submit Task</button>
+  </div>
+
+  <ul class="task-list">
+    @for (task of tasks; track task) {
+      <li>{{ task }}</li>
+    }
+  </ul>
+</div>
