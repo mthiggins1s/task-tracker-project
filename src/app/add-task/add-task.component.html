@@ -6,10 +6,16 @@
     <button (click)="onButtonClick()">Submit Task</button>
   </div>
 
-  <ul class="task-list">
-    <!-- loops through the task array, and when the task is submitted, it creates a list element -->
+  <ul>
     @for (task of tasks; track task) {
-    <li>{{ task }}</li>
+    <li [class.completed]="isCompleted(task)">
+      <input
+        type="checkbox"
+        [checked]="isCompleted(task)"
+        (change)="toggleComplete(task)"
+      />
+      {{ task }}
+    </li>
     }
   </ul>
 </div>
